@@ -9,7 +9,7 @@ public class SugarLumpLevel
       System.out.println("Enter the Level you would like to get the building to");
       Scanner scnr = new Scanner(System.in);
       int BulidLevel = scnr.nextInt();
-      System.out.println(SugarLumps(BulidLevel, new HashMap<>()));
+      System.out.println("It would take " + SugarLumps(BulidLevel, new HashMap<>()) + " sugarLumps to get to level " + BulidLevel);
    }
    public static int SugarLumps(int n, HashMap<Integer,Integer> calculatedLumps)
    {
