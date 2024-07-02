@@ -1,4 +1,4 @@
-def resting_value(n: int, bankLevel: int) -> None:
+def resting_value(n: int, bankLevel: int) -> str:
     rest = 10 * (n + 1) + bankLevel - 1
 
     stocks = {
@@ -21,10 +21,18 @@ def resting_value(n: int, bankLevel: int) -> None:
         16: "PBL",
         17: "YOU"
             }
-    print(f"the resting value of stock: {stocks.get(n)} is {rest}")
+    return f"the resting value of stock: {stocks.get(n)} is {rest} \n"
 
 
 bankLevel = int(input("Input your Cookie Bank level"))
-for x in range(0, 18):
-    resting_value(x, bankLevel)
+check = input("Would you like to write the output to a TXT file? y/n")
+if check == "y":
+    with open("results.txt" , "w") as txtfile:
+        for x in range (0,18):
+            txtfile.writelines(resting_value(x, bankLevel))
+
+if check == "n":
+    for x in range(0, 18):
+        print(resting_value(x, bankLevel))
+
 
